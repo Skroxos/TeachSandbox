@@ -1,4 +1,4 @@
-# 🧪 TechSandbox
+# TechSandbox
 
 [![Made with Unity](https://img.shields.io/badge/Made_with-Unity-000000.svg?style=for-the-badge&logo=unity)](https://unity.com/)
 [![Language](https://img.shields.io/badge/Language-C%23-239120?style=for-the-badge&logo=csharp)](https://docs.microsoft.com/en-us/dotnet/csharp/)
@@ -9,9 +9,9 @@ Each topic lives in its own self-contained folder and was developed independentl
 
 ---
 
-## 📦 Modules
+## Modules
 
-### 🎨 Design Patterns
+### Design Patterns
 Implementations of common software design patterns applied in a Unity context.
 
 | Module | Pattern | Description |
@@ -25,7 +25,7 @@ Implementations of common software design patterns applied in a Unity context.
 
 ---
 
-### ⚙️ Game Systems
+### Game Systems
 
 | Module | Description |
 |---|---|
@@ -35,7 +35,7 @@ Implementations of common software design patterns applied in a Unity context.
 
 ---
 
-### 🚀 Unity & Performance
+### Unity & Performance
 
 | Module | Description |
 |---|---|
@@ -49,7 +49,7 @@ Implementations of common software design patterns applied in a Unity context.
 
 ---
 
-## 🗂��� Project Structure
+## Project Structure
 
 ```
 Assets/
@@ -72,7 +72,7 @@ Assets/
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Technology | Usage |
 |---|---|
@@ -83,7 +83,7 @@ Assets/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 1. Clone the repository:
 ```bash
@@ -96,6 +96,6 @@ Each module folder contains its own scene(s) demonstrating the implemented conce
 
 ---
 
-## 📌 Purpose
+## Purpose
 
 This repository serves as a living reference and learning log — each module is a focused, self-contained proof of concept. The goal is to explore advanced Unity patterns and systems beyond what typical tutorials cover.
