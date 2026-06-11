@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/FSM/DummyFSM/Scene/FSM_Scene.unity
     guid: a2050b1a3e9327b4d9e9cec760eb008b
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 96bc90a47ef16874c8761e33986da52d, type: 2}
     com.unity.addressableassets: {fileID: 11400000, guid: 97c3b363c148e024c8fa8e36f416d215, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: df4c68bb43371df47a9b1c8dc67e3e41, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 056d199d3c239e644859801cba64e06a, type: 2}
   m_UseUCBPForAssetBundles: 0
