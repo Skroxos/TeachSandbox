@@ -55,7 +55,7 @@ public class GridTester : MonoBehaviour
         return Vector3.zero;
     }
 
-    public void OnDrawGizmos()
+    public  void OnDrawGizmos()
     {
         if (_cellSize == 0) return;
         Gizmos.color = Color.gray;
