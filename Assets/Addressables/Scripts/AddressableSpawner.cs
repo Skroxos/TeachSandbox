@@ -1,47 +1,68 @@
+using Cysharp.Threading.Tasks;
+using System;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace TechSandBox.Addressables.Scripts
 {
     public class AddressableSpawner : MonoBehaviour
     {
-        [SerializeField] public AssetReferenceGameObject prefabReference;
+        [SerializeField] private AssetReference prefabReference1;
+        [SerializeField] private AssetReference prefabReference2;
+
 
         private GameObject _spawnedInstance;
 
-        public void SpawnObject()
-        {
-            if (_spawnedInstance != null)
-            {
-                Debug.LogWarning("An instance is already spawned. Please destroy it before spawning a new one.");
-                return;
-            }
+        private bool _isLoading;
+        
+        
+        public void SpawnPrefab1() => LoadPrefab(prefabReference1);
+        public void SpawnPrefab2() => LoadPrefab(prefabReference2);
 
-            prefabReference.InstantiateAsync().Completed += OnInstatiateCompelted;
+
+        private void LoadPrefab(AssetReference assetReference)
+        {
+            if (_isLoading) return;
+            LoadDroneModel(assetReference, this.GetCancellationTokenOnDestroy()).Forget();
         }
 
-        private void OnInstatiateCompelted(AsyncOperationHandle<GameObject> obj)
+
+        private async UniTaskVoid LoadDroneModel(AssetReference assetReference, CancellationToken token)
         {
-            if (obj.Status == AsyncOperationStatus.Succeeded)
+            try
             {
-                _spawnedInstance = obj.Result;
-                Debug.Log("Object spawned successfully.");
+                _isLoading = true;
+
+                ReleaseCurrentInstance();
+
+                _spawnedInstance = await assetReference.InstantiateAsync().WithCancellation(token);
             }
-            else
+            catch (OperationCanceledException)
             {
-                Debug.LogError("Failed to spawn object.");
+                Debug.LogWarning("Asset loading was canceled.");
+                ReleaseCurrentInstance();
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"Failed to load asset: {ex.Message}");
+            }
+            finally
+            {
+                _isLoading = false;
             }
         }
-
-        public void DespawnObject()
+        
+        public void ReleaseCurrentInstance()
         {
-            if (_spawnedInstance != null)
-            {
-                prefabReference.ReleaseInstance(_spawnedInstance);
-                _spawnedInstance = null;
-                Debug.Log("Object despawned successfully.");
-            }
+            if (_spawnedInstance == null) return;
+            UnityEngine.AddressableAssets.Addressables.ReleaseInstance(_spawnedInstance);
+            _spawnedInstance = null;
+        }
+
+        private void OnDestroy()
+        {
+            ReleaseCurrentInstance();
         }
     }
 }

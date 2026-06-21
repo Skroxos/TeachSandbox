@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 161dc7cb0bf0b224fb36119e5f536898
   m_SerializeEntries:
+  - m_GUID: 20a727460697df64b8372fe486e41496
+    m_Address: Assets/Drakkar/Cybernetics/Cyberflutter/Prefabs/Cyberflutter Static.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 74fec5caafd65344f842d7d393e9210f
     m_Address: Assets/MainMenu/Scene/MainMenuScene.unity
     m_ReadOnly: 0
@@ -22,6 +27,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 84e9963b67e22944f988d6eed0d8e835
     m_Address: Assets/Addressables/Prefabs/Env.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9a338ccb0b0cf914898aed72d21e3bdc
+    m_Address: Assets/Drakkar/Cybernetics/Cyberflutter/Prefabs/Cyberflutter Static
+      Variant.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
